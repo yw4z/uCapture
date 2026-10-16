@@ -24,15 +24,18 @@ Just 160kb! starts instantly, uses practically no CPU and RAM while idle
 
 **Various options:** With Cursor visibility, Timer, FPS, Quality options
 
+### 💫 Simplified experience
+All UI designed to reduce clicks on repeating tasks 
+
 ### 🎨 Utilities
 **Color picker:** that can copy `#RRGGBB`, `RGB(…)` or `R, G, B`
 
-### Customizable
+### 😎 Customizable
 **Hotkeys:** Soon
 
 **Command line:** can be scripted or bound to a hotkey tool
 
-### Private
+### 🔒 Private
 never connects to the internet, and its own windows never appear in captures
 
 ---
@@ -53,26 +56,26 @@ never connects to the internet, and its own windows never appear in captures
 - [Privacy](#privacy)
 - [Verifying your download](#verifying-your-download)
 - [System requirements](#system-requirements)
-- [Building from source](#building-from-source)
 - [License](#license)
 
 ---
 
 ## Download and installation
 
-1. Download `uCapture.exe` from the [Releases](../../releases) page.
-2. Put it in any folder you like, for example `C:\ProgramData\Apps\uCapture\`.
-3. Run it. A uCapture icon appears in the system tray (bottom-right corner of the taskbar).
+**Installation & Running**
+1. Download `uCapture.exe` from the [Releases](../../releases) page. [Verify your download](#verifying-your-download)
+2. Put it in any folder you like, for example `C:\ProgramData\Apps\uCapture\`
+3. Run it. App icon appears in the system tray
 
-There is no installer. uCapture stores its settings in `settings.ini` next to the exe, so
-put it in a folder you can write to (not `C:\Program Files`). To remove uCapture, exit it
-from the tray and delete the folder. it doesn't save any keys to registry
+• No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
+• Ensure put it on a folder that doesnt require permissions like `C:\Program Files`
+• Only one instance of uCapture can run at a time
 
-To start uCapture with Windows, press `Win + R`, type `shell:startup`, and put a shortcut
-to `uCapture.exe` in the folder that opens.
+**Uninstallation**
+• Exit it from the tray and just delete it. it doesn't store any additional files or registry keys
 
-Only one copy of uCapture runs at a time. Starting it again (or running a
-[command](#command-line)) talks to the copy that is already running.
+**To start with Windows**
+• Press `Win + R`, type `shell:startup`, and put a shortcut of `uCapture.exe` to the folder that opens
 
 ---
 
@@ -408,7 +411,7 @@ Files are named with proper timestamp:
 
 ## Verifying your download
 
-Each release lists the **SHA-256** checksum of `uCapture.exe` and a link to its **VirusTotal** scan.
+Each release lists the **SHA-256** checksum and a link to its **VirusTotal** scan.
 To check that your download is the original file, open PowerShell in the download folder and run:
 
 ```powershell
