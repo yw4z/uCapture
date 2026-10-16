@@ -5,37 +5,35 @@ One small exe, no installer, no dependencies, no internet connection.
 
 ---
 
-## Key features at a glance
-
-### 🚀 Lightweight, Fast & fully featured
+## 🚀 Lightweight, Fast & fully featured
 Just 160kb! starts instantly, uses practically no CPU and RAM while idle
 
-### 🌄 Multiple screen capture modes
+## 🌄 Multiple screen capture modes
 **Region screenshots:** just draw a rectangle
 
 **Last region:** capture the same area again
 
 **Screen and window capture:** capture whatever you want easily
 
-### 🎥 Fully featured screen recording
+## 🎥 Fully featured screen recording
 **MP4 recording:** hardware-accelerated H.264 encoding
 
 **GIF recording:** built-in encoder and smart dithering
 
 **Various options:** With Cursor visibility, Timer, FPS, Quality options
 
-### 💫 Simplified experience
+## 💫 Simplified experience
 All UI designed to reduce clicks on repeating tasks 
 
-### 🎨 Utilities
+## 🎨 Utilities
 **Color picker:** that can copy `#RRGGBB`, `RGB(…)` or `R, G, B`
 
-### 😎 Customizable
+## 😎 Customizable
 **Hotkeys:** Soon
 
 **Command line:** can be scripted or bound to a hotkey tool
 
-### 🔒 Private
+## 🔒 Private
 never connects to the internet, and its own windows never appear in captures
 
 ---
@@ -81,21 +79,14 @@ never connects to the internet, and its own windows never appear in captures
 
 ## Quick start
 
-| I want to… | Do this |
-|---|---|
-| Screenshot part of the screen | Tray icon → **Region draw**, then drag a rectangle |
-| Screenshot a window | Tray icon → **Capture window**, then click the window |
-| Screenshot all monitors | Tray icon → **Capture Screens** |
-| Record a video or GIF | Tray icon → **Record**, position the frame, click the red **●** button |
-| Get a colour from the screen | Tray icon → **Color picker**, then click |
-| Find my captures | Tray icon → **More** → **Open captures folder** |
+Currently app only usable with tray menu or using cli commands that can be combined with hotkey tools
 
-Left- or right-click the tray icon to open the menu.
+Built-in keyboard shortcuts in development plan
 
 ---
 
 ## Tray menu
-
+Open the menu via left or right clicking the tray icon.
 | Item | What it does |
 |---|---|
 | **Region draw** | Draw a rectangle on the screen and capture it. |
