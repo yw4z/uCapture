@@ -7,42 +7,33 @@ One small exe, no installer, no dependencies, no internet connection.
 
 ## Key features at a glance
 
-### Lightweight, Fast & fully featured
-Just 160kb! lives in the tray, starts instantly, uses practically no CPU and RAM while idle.
+### 🚀 Lightweight, Fast & fully featured
+Just 160kb! starts instantly, uses practically no CPU and RAM while idle
 
-### Multiple screen capture modes
-**Region screenshots:**
-draw a rectangle and it's saved and copied to the clipboard.
+### 🌄 Multiple screen capture modes
+**Region screenshots:** just draw a rectangle
 
-**Last region:**
-capture the same area again with one click.
+**Last region:** capture the same area again
 
-**Screen and window capture:**
-grab every monitor, a single monitor, or click any window to capture it.
+**Screen and window capture:** capture whatever you want easily
 
-### Fully featured screen recording
-**MP4 recording:**
-hardware-accelerated H.264 with constant-quality encoding.
+### 🎥 Fully featured screen recording
+**MP4 recording:** hardware-accelerated H.264 encoding
 
-**GIF recording:**
-built-in encoder with a shared palette, smart dithering and small files.
+**GIF recording:** built-in encoder and smart dithering
 
-**With Cursor visibility, Timer, FPS, Quality options**
-3, 5 or 10 seconds before recording starts.
+**Various options:** With Cursor visibility, Timer, FPS, Quality options
 
-### Utilities
-**Colour picker:**
-a magnifier that copies `#RRGGBB`, `RGB(…)` or `R, G, B`.
+### 🎨 Utilities
+**Color picker:** that can copy `#RRGGBB`, `RGB(…)` or `R, G, B`
 
 ### Customizable
-**Hotkeys:**
-Soon
+**Hotkeys:** Soon
 
-**Command line:**
-every capture can be scripted or bound to a hotkey tool.
+**Command line:** can be scripted or bound to a hotkey tool
 
 ### Private
-never connects to the internet, and its own windows never appear in captures.
+never connects to the internet, and its own windows never appear in captures
 
 ---
 
@@ -291,7 +282,7 @@ black or frozen recordings, set `[Record] CaptureMethod=gdi`.
 
 ## Colour picker
 
-**Tray → Color picker** shows a 4× magnifier with the colour value next to the cursor.
+**Tray → Color picker** shows a 4× magnifier with the colour value next to the cursor
 
 | Action | Copies |
 |---|---|
@@ -301,14 +292,14 @@ black or frozen recordings, set `[Record] CaptureMethod=gdi`.
 | **Shift** (hold while moving) | Slows the cursor down for pixel-exact positioning |
 | **Esc** | Cancel |
 
-After picking, a notification in the picked colour shows the copied value.
+After picking, a notification in the picked colour shows the copied value
 
 ---
 
 ## Command line
 
 Every capture can be started from the command line, a script, a shortcut or a hotkey tool
-(AutoHotkey, PowerToys Keyboard Manager, a mouse driver, a Stream Deck…).
+(AutoHotkey, PowerToys Keyboard Manager, a mouse driver, a Stream Deck…)
 
 ```
 uCapture.exe <command>
@@ -325,8 +316,7 @@ uCapture.exe <command>
 | `ColorPicker` | Open the colour picker |
 | `OpenFolder` | Open the captures folder |
 
-- **Syntax:** commands are case-insensitive and may start with `-`, `--` or `/`
-  (`uCapture.exe -RegionDraw` works too).
+- **Syntax:** commands are case-insensitive and may start with `-`, `--` or `/` (`uCapture.exe -RegionDraw` works too).
 - **Running instance:** if uCapture is already running, the command is sent to it and the
   new process exits immediately. Otherwise uCapture starts in the tray and runs the
   command.
@@ -347,13 +337,13 @@ uCapture.exe CaptureRect "100 200 800 600"
 | Where | Input | Action |
 |---|---|---|
 | Region draw | Drag | Draw the region |
-| Region draw | Shift | Square |
+| Region draw | Shift | Use aspect ratio as 1:1 (Square) |
 | Region draw | Ctrl | Keep aspect ratio |
 | Region draw | Right-click / Esc | Cancel |
 | Capture window / Pick | Click | Capture the highlighted window or monitor |
 | Capture window / Pick | Right-click / Esc | Cancel |
 | Recording frame | Drag bar | Move |
-| Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = square) |
+| Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = use aspect ratio as 1:1 (Square)) |
 | Recording frame | Right-click | Tray menu |
 | Recording frame | Esc | Cancel countdown → stop recording → hide frame |
 | Colour picker | Left-click | Copy `#RRGGBB` |
@@ -392,11 +382,11 @@ automatically with their defaults, so an old `settings.ini` always keeps working
 
 ## File names and output folder
 
-Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; change this with
+Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can change it with
 `[Output] Dir`. If the folder can't be created (for example a disconnected drive), captures go
-to the default folder instead, so nothing is lost.
+to the default folder instead, so nothing is lost. Environment variables are supported for paths 
 
-Files are named by date and time:
+Files are named with proper timestamp:
 
 | Capture | Example |
 |---|---|
@@ -409,21 +399,17 @@ Files are named by date and time:
 
 ## Privacy
 
-- **No network access:** uCapture never connects to the internet. There is no telemetry,
-  no update check and no account.
-- **Local only:** settings are stored only in `settings.ini` next to the exe, and captures
-  are saved only to your captures folder.
-- **Hidden from captures:** uCapture's own windows (recording frame, notification,
-  pickers) are excluded from screen capture, so they never end up in your screenshots or
-  recordings, nor in other screen-sharing apps (Windows 10 version 2004 or later).
+- **No network access:** never requests internet connection. no telemetry, no update check
+- **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to your captures folder that you choice
+- **Hidden from captures:** uCapture's own windows (recording frame, notification, pickers) are excluded from screen capture, so they never show up in your screenshots or
+  recordings, nor in other screen-sharing apps (Windows 10 version 2004 or later)
 
 ---
 
 ## Verifying your download
 
-Each release lists the **SHA-256** checksum of `uCapture.exe` and a link to its
-**VirusTotal** scan. To check that your download is the original file, open PowerShell in the
-download folder and run:
+Each release lists the **SHA-256** checksum of `uCapture.exe` and a link to its **VirusTotal** scan.
+To check that your download is the original file, open PowerShell in the download folder and run:
 
 ```powershell
 Get-FileHash .\uCapture.exe -Algorithm SHA256
@@ -431,41 +417,17 @@ Get-FileHash .\uCapture.exe -Algorithm SHA256
 
 The result must match the checksum in the release notes.
 
-Because uCapture is a small, new and unsigned app, Windows SmartScreen may show
-"Windows protected your PC" the first time. Click **More info → Run anyway** if the checksum
-matches.
+uCapture is a small, new and unsigned app, Windows SmartScreen may show "Windows protected your PC" the first time.
+Click **More info → Run anyway** if the checksum matches.
 
 ---
 
 ## System requirements
 
-- Windows 10 or Windows 11 (x64)
-- MP4 recording: Windows Media Foundation (included in Windows, except "N" editions without
-  the Media Feature Pack)
-- Hardware video encoding: any GPU with a Windows H.264 encoder (NVIDIA, AMD, Intel); otherwise
-  Windows' software encoder is used automatically
-- Fully per-monitor DPI aware: sharp on high-DPI and mixed-DPI setups
-
----
-
-## Building from source
-
-> Remove this section if you publish binaries only.
-
-Requirements: **Visual Studio 2026** with the **Desktop development with C++** workload
-(MSVC v145 toolset, Windows SDK).
-
-1. Open the solution in Visual Studio.
-2. Select **Release | x64**.
-3. Build (`Ctrl + Shift + B`).
-
-`Directory.Build.targets` applies the size-optimised release settings (static runtime, link
-time code generation, unused code removal). Optional UPX compression can be enabled with
-`/p:UseUPX=true`, but it is off by default because packed executables are more often flagged
-by antivirus software.
-
-The project only uses libraries that ship with Windows (Win32, GDI+, Media Foundation,
-Direct3D 11 / DXGI). There are no third-party dependencies.
+- Windows 10+ (x64)
+- MP4 recording: Windows Media Foundation (included in Windows, except "N" editions without the Media Feature Pack)
+- Hardware video encoding: any GPU with a Windows H.264 encoder (NVIDIA, AMD, Intel); otherwise Windows' software encoder is used automatically
+- DPI aware: sharp on high-DPI and mixed-DPI setups
 
 ---
 
