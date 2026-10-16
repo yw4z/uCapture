@@ -66,13 +66,17 @@ never connects to the internet, and its own windows never appear in captures
 3. Run it. App icon appears in the system tray
 
 • No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
+
 • Ensure put it on a folder that doesnt require permissions like `C:\Program Files`
+
 • Only one instance of uCapture can run at a time
 
 **Uninstallation**
+
 • Exit it from the tray and just delete it. it doesn't store any additional files or registry keys
 
 **To start with Windows**
+
 • Press `Win + R`, type `shell:startup`, and put a shortcut of `uCapture.exe` to the folder that opens
 
 ---
