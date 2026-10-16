@@ -91,21 +91,21 @@ Built-in keyboard shortcuts in development plan
 
 ## Tray menu
 Open the menu via left or right clicking the tray icon.
+
+<img width="155" height="287" alt="20261016_230044_Screenshot" src="https://github.com/user-attachments/assets/2a5ddbf4-3e12-4857-8bf1-36a8772b19fe" />
+
 | Item | What it does |
 |---|---|
-| **Region draw** | Draw a rectangle on the screen and capture it. |
-| **Last region** | Capture the last drawn region again, without drawing. Disabled until you have drawn one. |
-| **Capture Screens** | Capture every monitor, as one file per monitor (or one combined image, see `CaptureMonsToOne`). |
-| **Screens ▸** | *(only with two or more monitors)* **Pick** lets you hover and click a monitor; below it, each monitor is listed with its number and resolution for a direct capture. |
-| **Capture window** | Hover over windows to highlight them, then click one to capture it. Hover the desktop to capture a whole monitor instead. |
-| **Windows ▸** | A list of open windows. Choose one to capture it directly, even if it is behind other windows or minimised. |
-| **Record** | Shows the recording frame and its control bar. |
-| **Color picker** | Opens the colour picker. |
+| **Region draw** | Draw a rectangle on the screen to capture |
+| **Last region** | Capture the last drawn region again, without drawing |
+| **Capture Screens** | Capture every monitor, as per monitor or combined image, see `CaptureMonsToOne` |
+| **Screens ▸** | **Pick** lets you capture screen via mouse with highlighting. Below it, each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
+| **Capture window** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
+| **Windows ▸** | A list of open windows. Choose one to capture it directly|
+| **Record** | Shows the recording frame |
+| **Color picker** | Opens the color picker |
 | **More ▸** | **Open captures folder**, **Settings** (opens `settings.ini`), **About**. |
 | **Exit** | Closes uCapture. |
-
-The menu follows the Windows dark style, and the tray icon switches between a light and a
-dark version to match your taskbar.
 
 ---
 
