@@ -1,40 +1,35 @@
 # uCapture
 
-Lightweight, fast screenshot and screen-recording tool for Windows 10+.
-One small exe, no installer, no dependencies, no internet connection.
+Lightweight, portable, fast screenshot and screen-recording tool for Windows 10+.
 
 ---
 
-## 🚀 Lightweight, Fast & fully featured
+## 🚀 Lightweight, fast & fully featured
 Just 160kb! starts instantly, uses practically no CPU and RAM while idle
 
 ## 🌄 Multiple screen capture modes
-**Region screenshots:** just draw a rectangle
-
-**Last region:** capture the same area again
-
+**Region screenshots:** just draw a rectangle<br>
+**Last region:** capture the same area again<br>
 **Screen and window capture:** capture whatever you want easily
 
 ## 🎥 Fully featured screen recording
-**MP4 recording:** hardware-accelerated H.264 encoding
-
-**GIF recording:** built-in encoder and smart dithering
-
-**Various options:** With Cursor visibility, Timer, FPS, Quality options
+**MP4 recording:** hardware-accelerated H.264 encoding<br>
+**GIF recording:** built-in encoder and smart dithering<br>
+**Various options:** with cursor visibility, timer, fps, quality options
 
 ## 💫 Simplified experience
-All UI designed to reduce clicks on repeating tasks 
+All UI designed to reduce time you have spent on repeating tasks 
 
 ## 🎨 Utilities
-**Color picker:** that can copy `#RRGGBB`, `RGB(…)` or `R, G, B`
+**Color picker:** that can copy `#RRGGBB`, `RGB(…)` or `R, G, B` formats to clipboard
 
 ## 😎 Customizable
-**Hotkeys:** Soon
-
-**Command line:** can be scripted or bound to a hotkey tool
+**Settings:** New options will be added on each release<br>
+**Hotkeys:** Soon<br>
+**Command line:** can be scripted or bound to a hotkey tools
 
 ## 🔒 Private
-never connects to the internet, and its own windows never appear in captures
+never connects to the internet
 
 ---
 
@@ -43,7 +38,7 @@ never connects to the internet, and its own windows never appear in captures
 - [Download and installation](#download-and-installation)
 - [Quick start](#quick-start)
 - [Tray menu](#tray-menu)
-- [Screenshots](#screenshots)
+- [Screen capturing](#screen-capturing)
 - [After a capture: notification, clipboard and editors](#after-a-capture-notification-clipboard-and-editors)
 - [Screen recording](#screen-recording)
 - [Colour picker](#colour-picker)
@@ -60,31 +55,26 @@ never connects to the internet, and its own windows never appear in captures
 
 ## Download and installation
 
-**Installation & Running**
-1. Download `uCapture.exe` from the [Releases](../../releases) page. [Verify your download](#verifying-your-download)
+### Installation & Running
+1. Download latest version from [Releases](../../releases) page. [Verify your download](#verifying-your-download)
 2. Put it in any folder you like, for example `C:\ProgramData\Apps\uCapture\`
 3. Run it. App icon appears in the system tray
 
-• No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
+- No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
+- Ensure put it on a folder that doesnt require permissions like `C:\Program Files`
+- Only one instance of uCapture can run at a time
 
-• Ensure put it on a folder that doesnt require permissions like `C:\Program Files`
+### Uninstallation
+- Exit it from the tray and just delete it. it doesn't store any additional files or registry keys
 
-• Only one instance of uCapture can run at a time
-
-**Uninstallation**
-
-• Exit it from the tray and just delete it. it doesn't store any additional files or registry keys
-
-**To start with Windows**
-
-• Press `Win + R`, type `shell:startup`, and put a shortcut of `uCapture.exe` to the folder that opens
+### To start with Windows
+- Press `Win + R`, type `shell:startup`, and put a shortcut of `uCapture.exe` to the folder that opens
 
 ---
 
 ## Quick start
 
-Currently app only usable with tray menu or using cli commands that can be combined with hotkey tools
-
+Currently app only usable with tray menu or using cli commands that can be combined with hotkey tools<br>
 Built-in keyboard shortcuts in development plan
 
 ---
@@ -98,30 +88,28 @@ Open the menu via left or right clicking the tray icon.
 |---|---|
 | **Region draw** | Draw a rectangle on the screen to capture |
 | **Last region** | Capture the last drawn region again, without drawing |
-| **Capture Screens** | Capture every monitor, as per monitor or combined image, see `CaptureMonsToOne` |
-| **Screens ▸** | **Pick** lets you capture screen via mouse with highlighting. Below it, each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
+| **Capture Screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
+| **Screens ▸** | **Pick**  Hover over screens to highlight them, then click one to capture. Also each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
 | **Capture window** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
 | **Windows ▸** | A list of open windows. Choose one to capture it directly|
 | **Record** | Shows the recording frame |
 | **Color picker** | Opens the color picker |
-| **More ▸** | **Open captures folder**, **Settings** (opens `settings.ini`), **About**. |
-| **Exit** | Closes uCapture. |
+| **More ▸** | **Open captures folder**, **Settings** (opens `settings.ini`), **About** |
+| **Exit** | Closes uCapture |
 
 ---
 
-## Screenshots
+## Screen capturing
 
 ### Region draw
 
-Press and drag to draw the capture area.
+Press and drag to draw the capture area<br>
+- Hold **Shift** to draw a perfect square
+- Hold **Ctrl** to keep the current aspect ratio
+- **Right-click** or press **Esc** to cancel
 
-- Hold **Shift** to draw a perfect square.
-- Hold **Ctrl** to keep the current aspect ratio.
-- **Right-click** or press **Esc** to cancel. The right-click is swallowed, so no context
-  menu pops up underneath.
-
-When you release the mouse, the region is saved, copied to the clipboard (if enabled) and
-remembered for **Last region**.
+When you release the left mouse button, the region is saved, copied to the clipboard (if enabled) and
+selected rectangle remembered for **Last region**
 
 ### Last region
 
