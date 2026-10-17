@@ -1,6 +1,7 @@
-# uCapture
+<img src="https://github.com/user-attachments/assets/debac80a-df93-4c27-b62b-0b1a7af8567b" width="64">
+<h1>uCapture</h1>
 
-Lightweight, portable, fast screenshot and screen-recording tool for Windows 10+.
+Lightweight, portable, fast screenshot and screen-recording tool for Windows 10
 
 ---
 
@@ -8,13 +9,11 @@ Lightweight, portable, fast screenshot and screen-recording tool for Windows 10+
 Just 160kb! starts instantly, uses practically no CPU and RAM while idle
 
 ## 🌄 Multiple screen capture modes
-**Region screenshots:** just draw a rectangle<br>
-**Last region:** capture the same area again<br>
+**Region capturing:** just draw a rectangle or capture last used again<br>
 **Screen and window capture:** capture whatever you want easily
 
 ## 🎥 Fully featured screen recording
-**MP4 recording:** hardware-accelerated H.264 encoding<br>
-**GIF recording:** built-in encoder and smart dithering<br>
+**MP4 & GIF support:** hardware-accelerated H.264 encoding and built-in GIF encoder with smart dithering<br>
 **Various options:** with cursor visibility, timer, fps, quality options
 
 ## 💫 Simplified experience
@@ -38,14 +37,14 @@ never connects to the internet
 - [Download and installation](#download-and-installation)
 - [Quick start](#quick-start)
 - [Tray menu](#tray-menu)
-- [Screen capturing](#screen-capturing)
-- [After a capture: notification, clipboard and editors](#after-a-capture-notification-clipboard-and-editors)
-- [Screen recording](#screen-recording)
+- [Capturing](#capturing)
+- [Recording](#recording)
 - [Colour picker](#colour-picker)
+- [After a capture](#after-a-capture)
 - [Command line](#command-line)
-- [Keyboard and mouse reference](#keyboard-and-mouse-reference)
+- [Keyboard and mouse](#keyboard-and-mouse)
 - [Settings](#settings)
-- [File names and output folder](#file-names-and-output-folder)
+- [Captured files](#captured-flies)
 - [Privacy](#privacy)
 - [Verifying your download](#verifying-your-download)
 - [System requirements](#system-requirements)
@@ -99,7 +98,7 @@ Open the menu via left or right clicking the tray icon.
 
 ---
 
-## Screen capturing
+## Capturing
 
 ### Region draw
 
@@ -148,34 +147,7 @@ which is handy when the window you want is covered by others.
 
 ---
 
-## After a capture: notification, clipboard and editors
-
-### Notification
-
-A small popup appears at the bottom of the screen after each capture:
-
-- **Show** opens the captures folder with the new file selected.
-- **Edit** opens the file in your editor (see below).
-
-It closes by itself after a few seconds and stays open while the mouse is over it. It never
-steals focus from the window you are working in, and it never appears in your captures.
-
-### Clipboard
-
-Every screenshot is also copied to the clipboard as an image, ready to paste into chat apps,
-documents or image editors. With several monitors, the clipboard gets one image of the whole
-desktop. Turn this off with `[Capture] CopyToClipboard=0`.
-
-### Editors
-
-The first time you press **Edit**, uCapture asks you to choose a program, separately for
-images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used
-from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are
-opened.
-
----
-
-## Screen recording
+## Recording
 
 ### The recording frame
 
@@ -266,6 +238,33 @@ black or frozen recordings, set `[Record] CaptureMethod=gdi`.
 
 ---
 
+## After a capture
+
+### Notification
+
+A small popup appears at the bottom of the screen after each capture:
+
+- **Show** opens the captures folder with the new file selected.
+- **Edit** opens the file in your editor (see below).
+
+It closes by itself after a few seconds and stays open while the mouse is over it. It never
+steals focus from the window you are working in, and it never appears in your captures.
+
+### Clipboard
+
+Every screenshot is also copied to the clipboard as an image, ready to paste into chat apps,
+documents or image editors. With several monitors, the clipboard gets one image of the whole
+desktop. Turn this off with `[Capture] CopyToClipboard=0`.
+
+### Editors
+
+The first time you press **Edit**, uCapture asks you to choose a program, separately for
+images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used
+from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are
+opened.
+
+---
+
 ## Colour picker
 
 **Tray → Color picker** shows a 4× magnifier with the colour value next to the cursor
@@ -318,7 +317,7 @@ uCapture.exe CaptureRect "100 200 800 600"
 
 ---
 
-## Keyboard and mouse reference
+## Keyboard and mouse
 
 | Where | Input | Action |
 |---|---|---|
@@ -410,7 +409,7 @@ Click **More info → Run anyway** if the checksum matches.
 
 ## System requirements
 
-- Windows 10+ (x64)
+- Windows 10 and higher (x64)
 - MP4 recording: Windows Media Foundation (included in Windows, except "N" editions without the Media Feature Pack)
 - Hardware video encoding: any GPU with a Windows H.264 encoder (NVIDIA, AMD, Intel); otherwise Windows' software encoder is used automatically
 - DPI aware: sharp on high-DPI and mixed-DPI setups
