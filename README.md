@@ -128,31 +128,27 @@ Captures all monitors at once. By default each monitor becomes its own file (`..
 
 A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`).
 
-### Screens
+### Screens Submenu
 
 With more than one monitor, the submenu has one entry per monitor captures that monitor straight away
 
-### Windows ▸
+### Windows Submenu
 
-Lists the open windows by title. Choosing one brings it to the front and captures it, which is handy when the window you want is covered by others.
+Lists the open windows by title. Choosing one brings it to the front and captures it, which is handy when the window you want is covered by others
 
 ---
 
 ## Recording
 
-### The recording frame
+### Recording frame
 
 **Tray → Record** shows a blue frame with a control bar. Everything inside the frame is
-recorded; the frame and bar themselves never appear in the recording.
+recorded
 
 - **Move:** drag the control bar.
 - **Resize:** drag an edge or a corner of the frame. The size is shown while you drag.
   - Hold **Ctrl** to keep the aspect ratio.
   - Hold **Shift** to make it square.
-- **Context menu:** right-click the frame or bar to open the tray menu.
-
-The frame remembers its position. If it would end up off-screen (for example after unplugging
-a monitor), it is moved back to the centre of your first monitor.
 
 ### Control bar
 
@@ -160,35 +156,31 @@ From left to right:
 
 | Button | What it does |
 |---|---|
-| **●** Record | Starts recording. During recording it becomes **■** Stop. |
-| Cursor | Show or hide the mouse pointer in recordings. |
-| Timer | Countdown before recording: off, 3, 5 or 10 seconds. |
-| **G** / **M** | Output format: GIF or MP4. |
-| **H** / **L** | MP4 quality: high or low. |
-| Frame rate | Frames per second. MP4: 10 / 15 / 30 / 60. GIF: 5 / 10 / 20 / 25 / 30 / 50. Each format remembers its own value. |
-| **⌃** / **⌄** | Move the bar above or below the frame. |
-| **✕** | Hide the frame. |
+| **●** Record | Starts recording. During recording it becomes **■** Stop and timer countdown visible in here|
+| Cursor | Show or hide the mouse pointer in recordings |
+| Timer | Countdown before recording. (Disabled / 3 / 5 / 10) seconds |
+| **G** / **M** | Output format: GIF or MP4 |
+| **H** / **L** | MP4 quality: high or low |
+| Frame rate | Frames per second. MP4:10/15/30/60. GIF:5/10/20/25/30/50. Each format remembers its own value |
+| **⌃** / **⌄** | Move the bar above or below the frame |
+| **✕** | Hide the frame |
 
-On a small frame, buttons that don't fit are hidden; make the frame wider to see them all.
-
-During recording the frame turns red, and the elapsed time is shown in the bar.
+- During recording the frame turns red, and the elapsed time is shown in the bar
 
 ### Countdown timer
 
-With a timer set, clicking Record starts a countdown instead. The Record button turns orange
-and shows the seconds left, and the frame turns orange too. Hover the button to see a
-**✕** and click it to cancel. Recording starts automatically when the countdown reaches zero.
+With a timer set, clicking Record starts a countdown instead. The Record button turns orange and shows the seconds left, and the frame turns orange too. Hover the button to see a **✕** and click it to cancel countdown. Recording starts automatically when the countdown reaches zero
 
 ### Stopping
 
 Click **■**, or click the frame and press **Esc**. Esc works in steps:
 
-1. During a countdown, it cancels the countdown.
-2. During recording, it stops the recording.
-3. Otherwise, it hides the frame.
+1. During a countdown, it cancels the countdown
+2. During recording, it stops the recording
+3. Otherwise, it hides the frame
 
-After stopping, the Record button shows **…** while the file is finished. Then the
-notification appears with **Show** and **Edit**.
+After stopping recording, the Record button shows **…** while the file is finished. Then the
+notification appears with **Show** and **Edit**
 
 ### MP4
 
