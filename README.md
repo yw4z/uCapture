@@ -156,43 +156,39 @@ From left to right:
 
 | Button | What it does |
 |---|---|
-| **●** Record | Starts recording. During recording it becomes **■** Stop and timer countdown visible in here|
+| Record | **●** Starts recording. During recording it becomes **■** Stop and timer countdown visible in here|
 | Cursor | Show or hide the mouse pointer in recordings |
 | Timer | Countdown before recording. (Disabled / 3 / 5 / 10) seconds |
 | **G** / **M** | Output format: GIF or MP4 |
 | **H** / **L** | MP4 quality: high or low |
-| Frame rate | Frames per second. MP4:10/15/30/60. GIF:5/10/20/25/30/50. Each format remembers its own value |
+| Frame rate | Frames per second. MP4:10/15/30/60. GIF:5/10/20/25/30/50. Each format has its own value |
 | **⌃** / **⌄** | Move the bar above or below the frame |
-| **✕** | Hide the frame |
+| **✕** | Hides frame |
 
 - During recording the frame turns red, and the elapsed time is shown in the bar
 
 ### Countdown timer
 
-With a timer set, clicking Record starts a countdown instead. The Record button turns orange and shows the seconds left, and the frame turns orange too. Hover the button to see a **✕** and click it to cancel countdown. Recording starts automatically when the countdown reaches zero
+With a timer set, clicking Record starts a countdown. Record button turns orange and shows the seconds left, and the frame turns orange too. Hover button to see a **✕** and click it to cancel countdown. Recording starts automatically when the countdown reaches zero
 
 ### Stopping
 
-Click **■**, or click the frame and press **Esc**. Esc works in steps:
+Click **■**, or click the frame or press **Esc**
 
+Esc works in these steps:
 1. During a countdown, it cancels the countdown
 2. During recording, it stops the recording
 3. Otherwise, it hides the frame
 
-After stopping recording, the Record button shows **…** while the file is finished. Then the
-notification appears with **Show** and **Edit**
+After stopping recording, Record button shows **…** while the file is finished. Then notification appears with buttons for **Show** and **Edit**
 
 ### MP4
 
-- **Encoding:** H.264 video, encoded by Windows Media Foundation using your graphics card's
-  hardware encoder when available.
-- **Quality:** constant-quality mode, so file size follows the content: a still screen uses
-  very little space. The **H/L** button switches between two quality levels that you can
-  tune in `settings.ini` (`Mp4QualityHi`, `Mp4QualityLo`; lower values are better).
+- **Encoding:** H.264 video, encoded by Windows Media Foundation using your graphics card's hardware encoder when available
+- **Quality:** constant-quality mode, so file size follows the content: a still screen uses very little space. The **H/L** button switches between two quality levels that you can tune in `settings.ini` (`Mp4QualityHi`, `Mp4QualityLo`; lower values are better)
 - **Fast path:** when the recording area is on a single monitor, frames go straight from
   the screen to the encoder on the graphics card, without a round trip through system
-  memory.
-- **Even sizes:** MP4 sizes are rounded down to even numbers, as H.264 requires.
+  memory
 
 > Windows "N" editions don't include Media Foundation. Install the **Media Feature Pack**
 > (Settings → Apps → Optional features) to record MP4. GIF recording works without it.
@@ -201,13 +197,11 @@ notification appears with **Show** and **Edit**
 
 uCapture has its own GIF encoder:
 
-- **One palette** for the whole GIF, built from all recorded frames, so colours never flicker.
-- **Smart dithering:** gradients and photos are smoothed, while flat UI colours and text stay
-  crisp.
+- **One palette** for the whole GIF, built from all recorded frames, so colours never flicker
+- **Smart dithering:** gradients and photos are smoothed, while flat UI colours and text stay crisp
 - **Small files:** only the changed part of each frame is stored, and if nothing changes,
-  no frame is added at all.
-- **Exact timing:** frames are captured at exactly the GIF frame rate, so every captured frame
-  becomes one GIF frame. 20, 25 and 50 fps play at exactly that speed.
+  no frame is added at all. This results 50% smaller gif files compared to other solutions
+- **Exact timing:** frames are captured at exactly the GIF frame rate, so every captured frame becomes one GIF frame. 20, 25 and 50 fps play at exactly that speed
 - **Progress:** while the GIF is built after recording, the notification shows the progress.
 
 Colours, dithering, looping and frame rate are set in the `[Gif]` section of `settings.ini`.
@@ -215,8 +209,7 @@ Colours, dithering, looping and frame rate are set in the `[Gif]` section of `se
 ### Capture method
 
 By default, recordings use **Desktop Duplication**, the same API screen-sharing apps use.
-It's fast, and an unchanged screen costs almost nothing. It falls back to the
-classic GDI method automatically where Desktop Duplication isn't available. If you ever get
+It's fast, and an unchanged screen costs almost nothing. It falls back to classic GDI method automatically where Desktop Duplication isn't available. If you ever get
 black or frozen recordings, set `[Record] CaptureMethod=gdi`.
 
 ---
@@ -227,37 +220,32 @@ black or frozen recordings, set `[Record] CaptureMethod=gdi`.
 
 A small popup appears at the bottom of the screen after each capture:
 
-- **Show** opens the captures folder with the new file selected.
-- **Edit** opens the file in your editor (see below).
+- **Show** opens the captures folder with the new file selected
+- **Edit** opens the file in your editor
 
-It closes by itself after a few seconds and stays open while the mouse is over it. It never
-steals focus from the window you are working in, and it never appears in your captures.
+It closes by itself after a few seconds. It never steals focus from the window you are working in, and it never appears in your captures
 
 ### Clipboard
 
-Every screenshot is also copied to the clipboard as an image, ready to paste into chat apps,
-documents or image editors. With several monitors, the clipboard gets one image of the whole
-desktop. Turn this off with `[Capture] CopyToClipboard=0`.
+Every screenshot is also copied to the clipboard as an image, ready to paste into chat apps, documents or image editors. With several monitors, the clipboard gets one image of the whole desktop. Turn this off with `[Capture] CopyToClipboard=0`
 
 ### Editors
 
 The first time you press **Edit**, uCapture asks you to choose a program, separately for
-images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used
-from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are
-opened.
+images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are opened
 
 ---
 
 ## Colour picker
 
-**Tray → Color picker** shows a 4× magnifier with the colour value next to the cursor
+**Tray → Color picker** shows a 4× magnifier with the values of color
 
 | Action | Copies |
 |---|---|
 | **Left-click** | `#RRGGBB` (hex) |
 | **Ctrl + left-click** | `RGB(R, G, B)` |
 | **Right-click** | `R, G, B` |
-| **Shift** (hold while moving) | Slows the cursor down for pixel-exact positioning |
+| **Shift** (while moving) | Slows the cursor down for fine positioning |
 | **Esc** | Cancel |
 
 After picking, a notification in the picked colour shows the copied value
@@ -266,8 +254,8 @@ After picking, a notification in the picked colour shows the copied value
 
 ## Command line
 
-Every capture can be started from the command line, a script, a shortcut or with a hotkey tool
-(AutoHotkey, PowerToys Keyboard Manager, a mouse driver, a Stream Deck…)
+Every capture can be started from the command line, a script, a shortcut or a hotkey tool
+(AutoHotkey, PowerToys Keyboard Manager, a Stream Deck…)
 
 ```
 uCapture.exe <command>
@@ -278,8 +266,7 @@ uCapture.exe <command>
 | `RegionDraw` | Draw a region to capture |
 | `LastRegion` | Capture the last region again |
 | `RegionPick` | Click a window (or the desktop for a monitor) to capture it |
-| `CaptureScreens` | Capture all monitors |
-| `CaptureScreen <n>` | Capture monitor `n` (1, 2, …) |
+| `CaptureScreens <n / "1,2,3">` | `0` or blank argument captures all monitors<br> `n` captures targeted screen<br> Or use a list with comma for a selective capture `"1,3,5"` |
 | `CaptureRect "x y w h"` | Capture a rectangle in screen pixels |
 | `ColorPicker` | Open the colour picker |
 | `OpenFolder` | Open the captures folder |
@@ -291,9 +278,10 @@ uCapture.exe <command>
 
 **Examples:**
 
-```bat
+```
 uCapture.exe RegionDraw
-uCapture.exe CaptureScreen 2
+uCapture.exe CaptureScreens 2
+uCapture.exe CaptureScreens "1,3,5"
 uCapture.exe CaptureRect "100 200 800 600"
 ```
 
