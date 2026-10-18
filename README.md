@@ -25,7 +25,7 @@ All UI designed to reduce time you have spent on repeating tasks
 ## 😎 Customizable
 **Settings:** New options will be added on each release<br>
 **Hotkeys:** Soon<br>
-**Command line:** can be scripted or bound to a hotkey tools
+**Command line:** can be scripted or bound to hotkey tools
 
 ## 🔒 Private
 never connects to the internet
@@ -60,7 +60,7 @@ never connects to the internet
 3. Run it. App icon appears in the system tray
 
 - No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
-- Ensure **don't** put it on a folder that require permissions like `C:\Program Files`
+- Don't put it in a folder that needs admin rights, like `C:\Program Files`. uCapture can't save its settings there
 - Only one instance of uCapture can run at a time
 
 ### Uninstallation
@@ -134,7 +134,7 @@ to capture it. If the window is in the background, it will be moved to foregroun
 
 If you hover the desktop instead of a window, the whole monitor is highlighted and captured
 
-- Hold **Shift** to highlight screen contains the cursor
+- Hold **Shift** to highlight the screen that contains the cursor
 - **Right-click** or **Esc** to cancel capturing
 
 ### Capture Screens
@@ -145,7 +145,7 @@ A short shutter flash confirms the capture (can be turned off with `[Capture] Sh
 
 ### Screens Submenu
 
-With more than one monitor, the submenu has one entry per monitor captures that monitor straight away
+With more than one monitor, the submenu has one entry per monitor; choosing one captures that monitor straight away
 
 A short shutter flash confirms the capture
 
@@ -190,7 +190,7 @@ With a timer set, clicking Record starts a countdown. Record button turns orange
 
 ### Stopping
 
-Click **■**, or press **Esc**
+Click **■** or press **Esc**
 
 Esc works in these steps:
 1. During a countdown, it cancels the countdown
@@ -216,16 +216,15 @@ uCapture has its own GIF encoder:
 
 - **One palette** for the whole GIF, built from all recorded frames, so colors never flicker
 - **Smart dithering:** gradients and photos are smoothed, while flat UI colors and text stay crisp
-- **Small files:** only the changed part of each frame is stored, and if nothing changes,
-  no frame is added at all. This results 50% smaller gif files in tests, about half the size
+- **Small files:** only the changed part of each frame is stored, and if nothing changes, no frame is added at all. In our tests GIFs came out about half the size of other tools
 - **Exact timing:** frames are captured at exactly the GIF frame rate, so every captured frame becomes one GIF frame. 20, 25 and 50 fps play at exactly that speed
-- **Progress:** while the GIF is built after recording, the notification shows the progress.
+- **Progress:** while the GIF is built after recording, the notification shows the progress
 
 Colors, dithering, looping and frame rate are set in the `[Gif]` section of `settings.ini`
 
 ### Capture method
 
-By default, recordings use **Desktop Duplication**, the same API screen-sharing apps use. It's fast, and an unchanged screen costs almost nothing. It falls back to classic GDI method automatically where Desktop Duplication isn't available.
+By default, recordings use **Desktop Duplication**, the same API screen-sharing apps use. It's fast, and an unchanged screen costs almost nothing. It falls back to classic GDI method automatically where Desktop Duplication isn't available
 
 > If you ever get black or frozen recordings, set `[Record] CaptureMethod=gdi`
 
@@ -310,9 +309,9 @@ uCapture.exe CaptureRect "100 200 800 600"
 | Region draw | Shift | Use aspect ratio as 1:1 (Square) |
 | Region draw | Ctrl | Keep aspect ratio |
 | Region draw | Right-click / Esc | Cancel |
-| Region Pick | Click | Capture the highlighted window or monitor |
-| Region Pick | Shift | Highlight screen that contains cursor and click to capture |
-| Region Pick | Right-click / Esc | Cancel |
+| Pick Region | Click | Capture the highlighted window or monitor |
+| Pick Region | Shift | Highlight screen that contains cursor and click to capture |
+| Pick Region | Right-click / Esc | Cancel |
 | Recording frame | Drag bar | Drag to move frame |
 | Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = use aspect ratio as 1:1 (Square)) |
 | Recording frame | Esc | Cancel countdown → stop recording → hide frame |
@@ -340,10 +339,10 @@ Highlights (Non listed settings controlled by UI):
 | `[Capture] CaptureMonsToOne` | One combined image for **Capture Screens** (1/0)|
 | `[Capture] Shutter` | Shutter effect after capturing screen(s) (1/0)|
 | `[Capture] PreferredMons` | You can choose which captures of monitors will be open on your editor with Edit button. use a numbers list (like 2,3,5) or use 0 for all |
-| `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button |
+| `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button. Lower values results higher quality outputs. Works like x264's CRF and default values are Mp4QualityHi=18 Mp4QualityLo=32 |
 | `[Record] Timer` | Countdown before recording (0/3/5/10)|
 | `[Record] CaptureMethod` | (`auto`/`gdi`) Auto is the default and uses Desktop Duplication method |
-| `[Record] Osd` | Informations that centered on frame (1/0) |
+| `[Record] Osd` | Visibility of informations that centered on frame (1/0) |
 | `[Record] FPS Cursor Quality` | MP4 frame rate(10/15/30/60), Cursor(1/0) and Quality(Hi=1/Lo=0) |
 | `[Gif] FPS Colors Dither Loop` | GIF frame rate(5/10/20/25/30/50), colors(2 to 256), dithering(1/0) and looping(1/0) |
 | `[Output] Dir` | Where captures are saved |
@@ -358,7 +357,7 @@ Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can chang
 to the default folder instead
 
 - **Environment variables** are supported on paths. So you don't have worry about user name while using documents, desktop or your custom folder that placed on user folder
-- .\ paths in [Output] Dir are relative to the exe’s folder
+- `.\` paths in [Output] Dir are relative to the exe’s folder
 
 Captures are named with proper timestamp;
 
@@ -373,8 +372,8 @@ Captures are named with proper timestamp;
 
 ## Privacy
 
-- **No network access:** never requests internet connection. no telemetry, no update check
-- **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to your captures folder you choose
+- **No network access:** never requests to the internet. No telemetry, no update check
+- **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to the captures folder you choose
 
 ---
 
@@ -388,7 +387,7 @@ Get-FileHash .\uCapture.exe -Algorithm SHA256
 
 The result must match the checksum in the release notes
 
-uCapture is a small, new and unsigned app, Windows SmartScreen may show "Windows protected your PC" the first time.
+uCapture is a small, new and unsigned app, so Windows SmartScreen may show "Windows protected your PC" the first time.
 Click **More info → Run anyway** if the checksum matches
 
 ---
