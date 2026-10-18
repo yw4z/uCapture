@@ -123,11 +123,11 @@ Press and drag to draw the capture area<br>
 
 When you release the left mouse button, the region will be captured and saved, copied to the clipboard (if enabled) and selected rectangle remembered for **Last region**
 
-### Last region
+### Region repeat
 
 Captures exactly the same rectangle as the previous region draw, instantly. Useful for taking "before / after" shots of the same area. The region is remembered across restarts
 
-### Pick region
+### Region pick
 
 Move the mouse around: the window or screen under the cursor gets a blue frame and a size label. Click
 to capture it. If the window is in the background, it will be moved to foreground first
@@ -279,8 +279,8 @@ uCapture.exe <command>
 | Command | What it does |
 |---|---|
 | `RegionDraw` | Draw a region to capture |
-| `LastRegion` | Capture the last region again |
-| `PickRegion` | Click a window (or the desktop for a monitor) to capture it |
+| `RegionRepeat` | Capture the last region again |
+| `RegionPick` | Click a window (or the desktop for a monitor) to capture it |
 | `CaptureScreens <n / "1,2,3">` | blank argument captures all monitors<br> `n` captures targeted screen<br> Or use a list with comma for a selective capture `"1,3,5"` |
 | `CaptureRect "x y w h"` | Capture a rectangle in screen pixels |
 | `ColorPicker` | Open the color picker |
