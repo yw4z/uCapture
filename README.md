@@ -87,14 +87,13 @@ Open the menu via left or right clicking the tray icon.
 |---|---|
 | **Region draw** | Draw a rectangle on the screen to capture |
 | **Last region** | Capture the last drawn region again, without drawing |
+| **Pick region** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
 | **Capture Screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
 | **Screens ▸** | **Pick**  Hover over screens to highlight them, then click one to capture. Also each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
-| **Capture window** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
 | **Windows ▸** | A list of open windows. Choose one to capture it directly|
 | **Record** | Shows the recording frame |
 | **Color picker** | Opens the color picker |
-| **More ▸** | **Open captures folder**, **Settings** (opens `settings.ini`), **About** |
-| **Exit** | Closes uCapture |
+| **More ▸** | **Open captures folder**, **Settings** (opens `settings.ini`), **About**, **Exit** |
 
 ---
 
@@ -105,45 +104,37 @@ Open the menu via left or right clicking the tray icon.
 Press and drag to draw the capture area<br>
 - Hold **Shift** to draw a perfect square
 - Hold **Ctrl** to keep the current aspect ratio
-- **Right-click** or press **Esc** to cancel
+- **Right-click** or **Esc** to cancel capturing
 
-When you release the left mouse button, the region is saved, copied to the clipboard (if enabled) and
-selected rectangle remembered for **Last region**
+When you release the left mouse button, the region will be captured and saved, copied to the clipboard (if enabled) and selected rectangle remembered for **Last region**
 
 ### Last region
 
-Captures exactly the same rectangle as the previous region capture, instantly. Useful for
-taking "before / after" shots of the same area. The region is remembered across restarts.
+Captures exactly the same rectangle as the previous region draw, instantly. Useful for taking "before / after" shots of the same area. The region is remembered across restarts
+
+### Pick region
+
+Move the mouse around: the window or screen under the cursor gets a blue frame and a size label. Click
+to capture it. If the window is on background, it will be moved to foreground first
+
+If you hover the desktop instead of a window, the whole monitor is highlighted and captured
+
+- Hold **Shift** to highlight screen contains the cursor
+- **Right-click** or **Esc** to cancel capturing
 
 ### Capture Screens
 
-Captures all monitors at once. By default each monitor becomes its own file
-(`..._Screen_1.png`, `..._Screen_2.png`, …). With `[Capture] CaptureMonsToOne=1` you get one
-image of the whole desktop instead. A short shutter flash confirms the capture (can be turned
-off with `Shutter=0`).
+Captures all monitors at once. By default each monitor becomes its own file (`..._Screen_1.png`, `..._Screen_2.png`, …). With `[Capture] CaptureMonsToOne=1` setting you get one image of the whole desktop instead.
 
-### Screens ▸ Pick and single monitors
+A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`).
 
-With more than one monitor, the **Screens** submenu has:
+### Screens
 
-- **Pick:** move the mouse over a monitor to highlight it with a blue frame and its size,
-  then click to capture it.
-- **One entry per monitor:** captures that monitor straight away.
-
-### Capture window
-
-Move the mouse around: the window under the cursor gets a blue frame and a size label. Click
-to capture it. uCapture captures the window's visible frame, without the invisible
-resize border that Windows 10/11 adds around windows. If the window is minimised, it is
-restored first.
-
-If you hover the desktop instead of a window, the whole monitor is highlighted and
-captured. **Right-click** or **Esc** cancels.
+With more than one monitor, the submenu has one entry per monitor captures that monitor straight away
 
 ### Windows ▸
 
-Lists the open windows by title. Choosing one brings it to the front and captures it,
-which is handy when the window you want is covered by others.
+Lists the open windows by title. Choosing one brings it to the front and captures it, which is handy when the window you want is covered by others.
 
 ---
 
@@ -365,7 +356,7 @@ automatically with their defaults, so an old `settings.ini` always keeps working
 
 ---
 
-## File names and output folder
+## Captured files
 
 Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can change it with
 `[Output] Dir`. If the folder can't be created (for example a disconnected drive), captures go
