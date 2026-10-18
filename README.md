@@ -1,18 +1,18 @@
 <img src="https://github.com/user-attachments/assets/debac80a-df93-4c27-b62b-0b1a7af8567b" width="64">
 <h1>uCapture</h1>
 
-Lightweight, portable, fast screenshot and screen-recording tool for Windows 10
+Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows 10 and recent versions
 
 ---
 
 ## 🚀 Lightweight, fast & fully featured
-Just 160kb! starts instantly, uses practically no CPU and RAM while idle
+Just under 200kb! starts instantly, uses practically no CPU and RAM while idle
 
 ## 🌄 Multiple screen capture modes
 **Region capturing:** just draw a rectangle or capture last used again<br>
 **Screen and window capture:** capture whatever you want easily
 
-## 🎥 Fully featured screen recording
+## 🎥 Screen recording
 **MP4 & GIF support:** hardware-accelerated H.264 encoding and built-in GIF encoder with smart dithering<br>
 **Various options:** with cursor visibility, timer, fps, quality options
 
@@ -78,7 +78,7 @@ Project started as a AutoHotkey based script. I have used it for a long time to 
 🎯 Goal of the project 
 - Making most compact, fast & modern looking capture tool
 
-📅 Development plan;
+📅 Development plan
 - Welcome screen with dedicated buttons for each function
 - Built-in hotkeys support
 - Frame / selection snapping to windows
@@ -103,7 +103,7 @@ Open the menu via left or right clicking the tray icon
 | **Last region** | Capture the last drawn region again, without drawing |
 | **Pick region** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
 | **Capture Screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
-| **Screens ▸** | **Pick**  Hover over screens to highlight them, then click one to capture. Also each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
+| **Screens ▸** | Each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
 | **Windows ▸** | A list of open windows. Choose one to capture it directly|
 | **Record** | Shows the recording frame |
 | **Color picker** | Opens the color picker |
@@ -140,15 +140,17 @@ If you hover the desktop instead of a window, the whole monitor is highlighted a
 
 Captures all monitors at once. By default each monitor becomes its own file (`..._Screen_1.png`, `..._Screen_2.png`, …). With `[Capture] CaptureMonsToOne=1` setting you get one image of the whole desktop instead.
 
-A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`).
+A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`)
 
 ### Screens Submenu
 
 With more than one monitor, the submenu has one entry per monitor captures that monitor straight away
 
+A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`)
+
 ### Windows Submenu
 
-Lists the open windows by title. Choosing one brings it to the front and captures it, which is handy when the window you want is covered by others
+Lists the open windows. Choosing one brings it to the front and captures it, which is handy when the window you want is covered by others
 
 ---
 
@@ -170,7 +172,7 @@ From left to right:
 
 | Button | What it does |
 |---|---|
-| Record | **●** Starts recording. During recording it becomes **■** Stop and timer countdown visible in here|
+| Record | **●** starts recording. During recording it becomes **■** Stop and timer countdown visible in here|
 | Cursor | Show or hide the mouse pointer in recordings |
 | Timer | Countdown before recording. (Disabled / 3 / 5 / 10) seconds |
 | **G** / **M** | Output format: GIF or MP4 |
@@ -205,7 +207,7 @@ After stopping recording, Record button shows **…** while the file is finished
   memory
 
 > Windows "N" editions don't include Media Foundation. Install the **Media Feature Pack**
-> (Settings → Apps → Optional features) to record MP4. GIF recording works without it.
+> (Settings → Apps → Optional features) to record MP4. GIF recording works without it
 
 ### GIF
 
@@ -218,13 +220,13 @@ uCapture has its own GIF encoder:
 - **Exact timing:** frames are captured at exactly the GIF frame rate, so every captured frame becomes one GIF frame. 20, 25 and 50 fps play at exactly that speed
 - **Progress:** while the GIF is built after recording, the notification shows the progress.
 
-Colours, dithering, looping and frame rate are set in the `[Gif]` section of `settings.ini`.
+Colors, dithering, looping and frame rate are set in the `[Gif]` section of `settings.ini`
 
 ### Capture method
 
-By default, recordings use **Desktop Duplication**, the same API screen-sharing apps use.
-It's fast, and an unchanged screen costs almost nothing. It falls back to classic GDI method automatically where Desktop Duplication isn't available. If you ever get
-black or frozen recordings, set `[Record] CaptureMethod=gdi`.
+By default, recordings use **Desktop Duplication**, the same API screen-sharing apps use. It's fast, and an unchanged screen costs almost nothing. It falls back to classic GDI method automatically where Desktop Duplication isn't available.
+
+> If you ever get black or frozen recordings, set `[Record] CaptureMethod=gdi`
 
 ---
 
@@ -378,17 +380,16 @@ Captures are named with proper timestamp;
 
 ## Verifying your download
 
-Each release lists the **SHA-256** checksum and a link to its **VirusTotal** scan.
-To check that your download is the original file, open PowerShell in the download folder and run:
+Each release lists the **SHA-256** checksum and a link to its **VirusTotal** scan. To check that your download is the original file, open PowerShell in the download folder and run:
 
 ```powershell
 Get-FileHash .\uCapture.exe -Algorithm SHA256
 ```
 
-The result must match the checksum in the release notes.
+The result must match the checksum in the release notes
 
 uCapture is a small, new and unsigned app, Windows SmartScreen may show "Windows protected your PC" the first time.
-Click **More info → Run anyway** if the checksum matches.
+Click **More info → Run anyway** if the checksum matches
 
 ---
 
