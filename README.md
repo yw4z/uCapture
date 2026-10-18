@@ -101,9 +101,9 @@ Open the menu via left or right clicking the tray icon
 | Item | What it does |
 |---|---|
 | **Region draw** | Draw a rectangle on the screen to capture |
-| **Last region** | Capture the last drawn region again, without drawing |
-| **Pick region** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
-| **Capture Screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
+| **Region repeat** | Capture the last drawn region again, without drawing |
+| **Region pick** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
+| **Capture screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
 | **Screens ▸** | Each monitor is listed with its number and resolution for a direct capture. **Only appears if multiple monitors exist** |
 | **Windows ▸** | A list of open windows. Choose one to capture it directly|
 | **Record** | Shows the recording frame |
@@ -309,9 +309,9 @@ uCapture.exe CaptureRect "100 200 800 600"
 | Region draw | Shift | Use aspect ratio as 1:1 (Square) |
 | Region draw | Ctrl | Keep aspect ratio |
 | Region draw | Right-click / Esc | Cancel |
-| Pick Region | Click | Capture the highlighted window or monitor |
-| Pick Region | Shift | Highlight screen that contains cursor and click to capture |
-| Pick Region | Right-click / Esc | Cancel |
+| Region pick | Click | Capture the highlighted window or monitor |
+| Region pick | Shift | Highlight screen that contains cursor and click to capture |
+| Region pick | Right-click / Esc | Cancel |
 | Recording frame | Drag bar | Drag to move frame |
 | Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = use aspect ratio as 1:1 (Square)) |
 | Recording frame | Esc | Cancel countdown → stop recording → hide frame |
