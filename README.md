@@ -274,7 +274,7 @@ After picking, a notification in the picked colour shows the copied value
 
 ## Command line
 
-Every capture can be started from the command line, a script, a shortcut or a hotkey tool
+Every capture can be started from the command line, a script, a shortcut or with a hotkey tool
 (AutoHotkey, PowerToys Keyboard Manager, a mouse driver, a Stream Deck…)
 
 ```
@@ -285,20 +285,19 @@ uCapture.exe <command>
 |---|---|
 | `RegionDraw` | Draw a region to capture |
 | `LastRegion` | Capture the last region again |
+| `RegionPick` | Click a window (or the desktop for a monitor) to capture it |
 | `CaptureScreens` | Capture all monitors |
 | `CaptureScreen <n>` | Capture monitor `n` (1, 2, …) |
 | `CaptureRect "x y w h"` | Capture a rectangle in screen pixels |
-| `CaptureWindow` | Click a window (or the desktop for a monitor) to capture it |
 | `ColorPicker` | Open the colour picker |
 | `OpenFolder` | Open the captures folder |
 
-- **Syntax:** commands are case-insensitive and may start with `-`, `--` or `/` (`uCapture.exe -RegionDraw` works too).
+- **Syntax:** commands are case-insensitive and may start with `-`, `--` or `/` (`uCapture.exe -RegionDraw` works too)
 - **Running instance:** if uCapture is already running, the command is sent to it and the
-  new process exits immediately. Otherwise uCapture starts in the tray and runs the
-  command.
-- **Help:** an unknown command shows a help window listing all commands.
+  command launchs immediately. Otherwise uCapture starts in the tray and runs the command
+- **Help:** an unknown command shows a help window listing all commands
 
-Examples:
+**Examples:**
 
 ```bat
 uCapture.exe RegionDraw
@@ -316,11 +315,11 @@ uCapture.exe CaptureRect "100 200 800 600"
 | Region draw | Shift | Use aspect ratio as 1:1 (Square) |
 | Region draw | Ctrl | Keep aspect ratio |
 | Region draw | Right-click / Esc | Cancel |
-| Capture window / Pick | Click | Capture the highlighted window or monitor |
-| Capture window / Pick | Right-click / Esc | Cancel |
-| Recording frame | Drag bar | Move |
+| Region Pick | Click | Capture the highlighted window or monitor |
+| Region Pick | Shift | Highlight screen that contains cursor and click to capture |
+| Region Pick | Right-click / Esc | Cancel |
+| Recording frame | Drag bar | Drag to move frame |
 | Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = use aspect ratio as 1:1 (Square)) |
-| Recording frame | Right-click | Tray menu |
 | Recording frame | Esc | Cancel countdown → stop recording → hide frame |
 | Colour picker | Left-click | Copy `#RRGGBB` |
 | Colour picker | Ctrl + left-click | Copy `RGB(R, G, B)` |
@@ -334,7 +333,7 @@ uCapture.exe CaptureRect "100 200 800 600"
 
 All settings lives in `settings.ini` next to `uCapture.exe`. You can quickly access it from **Tray → More → Settings**
 
-- Close uCapture before editing it, because the app saves its settings when it exits
+- Close uCapture before editing settings because the app saves its settings when it exits
 
 Highlights (Non listed settings controlled by UI):
 
@@ -363,7 +362,7 @@ Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can chang
 `[Output] Dir`. If the folder can't be created (for example a disconnected drive), captures go
 to the default folder instead
 
-- **Environment variables** are supported for paths. So you don't have worry about user name on paths
+- **Environment variables** are supported on paths. So you don't have worry about user name while using documents, desktop or your custom folder that placed on user folder
 
 Captures are named with proper timestamp;
 
