@@ -17,7 +17,8 @@ Just about 200kb! starts instantly, uses practically no CPU and RAM while idle
 **Various options:** with cursor visibility, timer, fps, quality options
 
 ## 💫 Simplified experience
-All UI designed to reduce time you have spent on repeating tasks 
+**Boosted workflow:** all UI designed to reduce time you have spent on repeating tasks<br>
+**Dark mode support:** appearance follows the Windows light / dark mode
 
 ## 🎨 Utilities
 **Color picker:** that can copy `#RRGGBB`, `RGB(…)` or `R, G, B` formats to clipboard
@@ -73,10 +74,11 @@ never connects to the internet
 
 ## About project
 
-Project started as a AutoHotkey based script. I have used it for a long time to shape experience in my workflow then decided share as an app with writing it on win32 for best performance. Code written by Copilot and Claude under my guidance and heavy testing
+The project started as an AutoHotkey script. I have used it for a long time to shape experience in my workflow then i decided share it. Code written on win32 for best performance by using Copilot and Claude under my guidance and testing
 
 🎯 Goal of the project 
 - Making most compact, fast & modern looking capture tool
+- Boosting user workflow
 
 📅 Development plan
 - Welcome screen with dedicated buttons for each function
@@ -89,7 +91,7 @@ Project started as a AutoHotkey based script. I have used it for a long time to 
 - Optional sounds for notifications and capturing
 - More settings to configure experience
 - Improved area detection for region pick
-- Improved Cli commands
+- Improved CLI commands
 
 ---
 
@@ -121,7 +123,7 @@ Press and drag to draw the capture area<br>
 - Hold **Ctrl** to keep the current aspect ratio
 - **Right-click** or **Esc** to cancel capturing
 
-When you release the left mouse button, the region will be captured and saved, copied to the clipboard (if enabled) and selected rectangle remembered for **Last region**
+When you release the left mouse button, the region will be captured and saved, copied to the clipboard (if enabled) and selected rectangle remembered for **Region repeat**
 
 ### Region repeat
 
@@ -137,7 +139,7 @@ If you hover the desktop instead of a window, the whole monitor is highlighted a
 - Hold **Shift** to highlight the screen that contains the cursor
 - **Right-click** or **Esc** to cancel capturing
 
-### Capture Screens
+### Capture screens
 
 Captures all monitors at once. By default each monitor becomes its own file (`..._Screen_1.png`, `..._Screen_2.png`, …). With `[Capture] CaptureMonsToOne=1` setting you get one image of the whole desktop instead.
 
@@ -175,7 +177,7 @@ From left to right:
 |---|---|
 | Record | **●** starts recording. During recording it becomes **■** Stop and timer countdown visible in here|
 | Cursor | Show or hide the mouse pointer in recordings |
-| Timer | Countdown before recording. (Disabled / 3 / 5 / 10) seconds |
+| Timer | Countdown before recording. (Off / 3 / 5 / 10) seconds |
 | **G** / **M** | Output format: GIF or MP4 |
 | **H** / **L** | MP4 quality: high or low |
 | Frame rate | Frames per second. MP4:10/15/30/60. GIF:5/10/20/25/30/50. Each format has its own value |
@@ -202,7 +204,7 @@ After stopping recording, Record button shows **…** while the file is finished
 ### MP4
 
 - **Encoding:** H.264 video, encoded by Windows Media Foundation using your graphics card's hardware encoder when available
-- **Quality:** constant-quality mode, so file size follows the content: a still screen uses very little space. The **H/L** button switches between two quality levels that you can tune in `settings.ini` (`Mp4QualityHi`, `Mp4QualityLo`; lower values are better)
+- **Quality:** constant-quality mode, so file size follows the content: a still screen uses very little space. The **H/L** button switches between two quality levels that you can tune in `settings.ini` (`Mp4QualityHi`, `Mp4QualityLo`)
 - **Fast path:** when the recording area is on a single monitor, frames go straight from
   the screen to the encoder on the graphics card, without a round trip through system
   memory
@@ -247,13 +249,13 @@ Every screenshot is also copied to the clipboard as an image, ready to paste int
 
 ### Editors
 
-The first time you press Edit, uCapture asks you to choose a program, separately for images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are opened
+The first time you press Edit, uCapture asks you to choose a program, separately for images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used from then on. After **Capture screens**, `PreferredMons` controls which monitors' images are opened
 
 ---
 
 ## Color picker
 
-**Tray → Color picker** shows a 4× magnifier with the values of color
+**Tray → Color picker** shows a 4× magnifier with the values of the color under the cursor
 
 | Action | Copies |
 |---|---|
@@ -336,13 +338,13 @@ Highlights (Non listed settings controlled by UI):
 | `[Capture] ImageFormat` | (`png`/`jpg`) Lossless png is the default|
 | `[Capture] JpgQuality` | Quality setting for jpg format with (50-100) range |
 | `[Capture] CopyToClipboard` | Also copy screenshots to the clipboard after capture (1/0)|
-| `[Capture] CaptureMonsToOne` | One combined image for **Capture Screens** (1/0)|
+| `[Capture] CaptureMonsToOne` | One combined image for **Capture screens** (1/0)|
 | `[Capture] Shutter` | Shutter effect after capturing screen(s) (1/0)|
-| `[Capture] PreferredMons` | You can choose which captures of monitors will be open on your editor with Edit button. use a numbers list (like 2,3,5) or use 0 for all |
-| `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button. Lower values results higher quality outputs. Works like x264's CRF and default values are Mp4QualityHi=18 Mp4QualityLo=32 |
+| `[Capture] PreferredMons` | Which monitors' images the **Edit** button opens after Capture screens: a list like `2,3,5`, or `0` for all |
+| `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button. Lower values give higher quality. Works like x264's CRF and default values are Mp4QualityHi=18 Mp4QualityLo=32 |
 | `[Record] Timer` | Countdown before recording (0/3/5/10)|
 | `[Record] CaptureMethod` | (`auto`/`gdi`) Auto is the default and uses Desktop Duplication method |
-| `[Record] Osd` | Visibility of informations that centered on frame (1/0) |
+| `[Record] Osd` | Short hints in the middle of the frame when a bar option changes (1/0) |
 | `[Record] FPS Cursor Quality` | MP4 frame rate(10/15/30/60), Cursor(1/0) and Quality(Hi=1/Lo=0) |
 | `[Gif] FPS Colors Dither Loop` | GIF frame rate(5/10/20/25/30/50), colors(2 to 256), dithering(1/0) and looping(1/0) |
 | `[Output] Dir` | Where captures are saved |
@@ -357,7 +359,7 @@ Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can chang
 to the default folder instead
 
 - **Environment variables** are supported on paths. So you don't have worry about user name while using documents, desktop or your custom folder that placed on user folder
-- `.\` paths in [Output] Dir are relative to the exe’s folder
+- `.\` paths in `[Output] Dir` are relative to the exe’s folder
 
 Captures are named with proper timestamp;
 
@@ -372,7 +374,7 @@ Captures are named with proper timestamp;
 
 ## Privacy
 
-- **No network access:** never requests to the internet. No telemetry, no update check
+- **No network access:** never connects to the internet. No telemetry, no update check
 - **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to the captures folder you choose
 
 ---
@@ -394,7 +396,7 @@ Click **More info → Run anyway** if the checksum matches
 
 ## System requirements
 
-- Windows 10 and 11
+- Windows 10 and 11, 64-bit
 - MP4 recording: Windows Media Foundation (included in Windows, except "N" editions without the Media Feature Pack)
 - Hardware video encoding: any GPU with a Windows H.264 encoder (NVIDIA, AMD, Intel); otherwise Windows' software encoder is used automatically
 - DPI aware: sharp on high-DPI and mixed-DPI setups
