@@ -1,12 +1,12 @@
 <img src="https://github.com/user-attachments/assets/debac80a-df93-4c27-b62b-0b1a7af8567b" width="64">
 <h1>uCapture</h1>
 
-Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows 10 and recent versions
+Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows 10 and 11
 
 ---
 
 ## 🚀 Lightweight, fast & fully featured
-Just under 200kb! starts instantly, uses practically no CPU and RAM while idle
+Just about 200kb! starts instantly, uses practically no CPU and RAM while idle
 
 ## 🌄 Multiple screen capture modes
 **Region capturing:** just draw a rectangle or capture last used again<br>
@@ -39,12 +39,12 @@ never connects to the internet
 - [Tray menu](#tray-menu)
 - [Capturing](#capturing)
 - [Recording](#recording)
-- [Colour picker](#colour-picker)
+- [Color picker](#color-picker)
 - [After a capture](#after-a-capture)
 - [Command line](#command-line)
 - [Keyboard and mouse](#keyboard-and-mouse)
 - [Settings](#settings)
-- [Captured files](#captured-flies)
+- [Captured files](#captured-files)
 - [Privacy](#privacy)
 - [Verifying your download](#verifying-your-download)
 - [System requirements](#system-requirements)
@@ -56,11 +56,11 @@ never connects to the internet
 
 ### Installation & Running
 1. Download latest version from [Releases](../../releases) page. [Verify your download](#verifying-your-download)
-2. Put it in any folder you like, for example `C:\ProgramData\Apps\uCapture\`
+2. Put it in any folder you like, for example `C:\Apps\uCapture\`
 3. Run it. App icon appears in the system tray
 
 - No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
-- Ensure put it on a folder that doesnt require permissions like `C:\Program Files`
+- Ensure **don't** put it on a folder that require permissions like `C:\Program Files`
 - Only one instance of uCapture can run at a time
 
 ### Uninstallation
@@ -73,7 +73,7 @@ never connects to the internet
 
 ## About project
 
-Project started as a AutoHotkey based script. I have used it for a long time to shape experience in my workflow then decided share as an app with writing it on win32 for best performance. Code written by CoPilot and Claude under my guidance and heavy testing
+Project started as a AutoHotkey based script. I have used it for a long time to shape experience in my workflow then decided share as an app with writing it on win32 for best performance. Code written by Copilot and Claude under my guidance and heavy testing
 
 🎯 Goal of the project 
 - Making most compact, fast & modern looking capture tool
@@ -104,7 +104,7 @@ Open the menu via left or right clicking the tray icon
 | **Last region** | Capture the last drawn region again, without drawing |
 | **Pick region** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
 | **Capture Screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
-| **Screens ▸** | Each monitor is listed with its number and resolution for a direct capture. *Only appears if multiple monitors exist |
+| **Screens ▸** | Each monitor is listed with its number and resolution for a direct capture. **Only appears if multiple monitors exist** |
 | **Windows ▸** | A list of open windows. Choose one to capture it directly|
 | **Record** | Shows the recording frame |
 | **Color picker** | Opens the color picker |
@@ -130,7 +130,7 @@ Captures exactly the same rectangle as the previous region draw, instantly. Usef
 ### Pick region
 
 Move the mouse around: the window or screen under the cursor gets a blue frame and a size label. Click
-to capture it. If the window is on background, it will be moved to foreground first
+to capture it. If the window is in the background, it will be moved to foreground first
 
 If you hover the desktop instead of a window, the whole monitor is highlighted and captured
 
@@ -147,7 +147,7 @@ A short shutter flash confirms the capture (can be turned off with `[Capture] Sh
 
 With more than one monitor, the submenu has one entry per monitor captures that monitor straight away
 
-A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`)
+A short shutter flash confirms the capture
 
 ### Windows Submenu
 
@@ -190,7 +190,7 @@ With a timer set, clicking Record starts a countdown. Record button turns orange
 
 ### Stopping
 
-Click **■**, or click the frame or press **Esc**
+Click **■**, or press **Esc**
 
 Esc works in these steps:
 1. During a countdown, it cancels the countdown
@@ -214,10 +214,10 @@ After stopping recording, Record button shows **…** while the file is finished
 
 uCapture has its own GIF encoder:
 
-- **One palette** for the whole GIF, built from all recorded frames, so colours never flicker
-- **Smart dithering:** gradients and photos are smoothed, while flat UI colours and text stay crisp
+- **One palette** for the whole GIF, built from all recorded frames, so colors never flicker
+- **Smart dithering:** gradients and photos are smoothed, while flat UI colors and text stay crisp
 - **Small files:** only the changed part of each frame is stored, and if nothing changes,
-  no frame is added at all. This results 50% smaller gif files compared to other solutions
+  no frame is added at all. This results 50% smaller gif files in tests, about half the size
 - **Exact timing:** frames are captured at exactly the GIF frame rate, so every captured frame becomes one GIF frame. 20, 25 and 50 fps play at exactly that speed
 - **Progress:** while the GIF is built after recording, the notification shows the progress.
 
@@ -248,12 +248,11 @@ Every screenshot is also copied to the clipboard as an image, ready to paste int
 
 ### Editors
 
-The first time you press **Edit**, uCapture asks you to choose a program, separately for
-images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are opened
+The first time you press Edit, uCapture asks you to choose a program, separately for images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.ini` and used from then on. After **Capture Screens**, `PreferredMons` controls which monitors' images are opened
 
 ---
 
-## Colour picker
+## Color picker
 
 **Tray → Color picker** shows a 4× magnifier with the values of color
 
@@ -265,7 +264,7 @@ images, MP4 videos and GIFs. Your choice is saved in `[Editors]` in `settings.in
 | **Shift** (while moving) | Slows the cursor down for fine positioning |
 | **Esc** | Cancel |
 
-After picking, a notification in the picked colour shows the copied value
+After picking, a notification in the picked color shows the copied value
 
 ---
 
@@ -282,16 +281,15 @@ uCapture.exe <command>
 |---|---|
 | `RegionDraw` | Draw a region to capture |
 | `LastRegion` | Capture the last region again |
-| `RegionPick` | Click a window (or the desktop for a monitor) to capture it |
-| `CaptureScreens <n / "1,2,3">` | `0` or blank argument captures all monitors<br> `n` captures targeted screen<br> Or use a list with comma for a selective capture `"1,3,5"` |
+| `PickRegion` | Click a window (or the desktop for a monitor) to capture it |
+| `CaptureScreens <n / "1,2,3">` | blank argument captures all monitors<br> `n` captures targeted screen<br> Or use a list with comma for a selective capture `"1,3,5"` |
 | `CaptureRect "x y w h"` | Capture a rectangle in screen pixels |
-| `ColorPicker` | Open the colour picker |
+| `ColorPicker` | Open the color picker |
 | `OpenFolder` | Open the captures folder |
 
 - **Syntax:** commands are case-insensitive and may start with `-`, `--` or `/` (`uCapture.exe -RegionDraw` works too)
-- **Running instance:** if uCapture is already running, the command is sent to it and the
-  command launchs immediately. Otherwise uCapture starts in the tray and runs the command
-- **Help:** an unknown command shows a help window listing all commands
+- **Running instance:** if uCapture is already running, the command is sent to it and the command runs immediately. Otherwise uCapture starts in the tray and runs the command
+- **Help:** `Help` or `/?` or an unknown command, shows a window listing all commands
 
 **Examples:**
 
@@ -318,19 +316,19 @@ uCapture.exe CaptureRect "100 200 800 600"
 | Recording frame | Drag bar | Drag to move frame |
 | Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = use aspect ratio as 1:1 (Square)) |
 | Recording frame | Esc | Cancel countdown → stop recording → hide frame |
-| Colour picker | Left-click | Copy `#RRGGBB` |
-| Colour picker | Ctrl + left-click | Copy `RGB(R, G, B)` |
-| Colour picker | Right-click | Copy `R, G, B` |
-| Colour picker | Shift | Fine movement |
-| Colour picker | Esc | Cancel |
+| Color picker | Left-click | Copy `#RRGGBB` |
+| Color picker | Ctrl + left-click | Copy `RGB(R, G, B)` |
+| Color picker | Right-click | Copy `R, G, B` |
+| Color picker | Shift | Fine movement |
+| Color picker | Esc | Cancel |
 
 ---
 
 ## Settings
 
-All settings lives in `settings.ini` next to `uCapture.exe`. You can quickly access it from **Tray → More → Settings**
+All settings live in `settings.ini` next to `uCapture.exe`. You can quickly access it from **Tray → More → Settings**
 
-- Close uCapture before editing settings because the app saves its settings when it exits
+- Close uCapture before editing: it saves its settings when it exits which would overwrite your edits
 
 Highlights (Non listed settings controlled by UI):
 
@@ -341,13 +339,13 @@ Highlights (Non listed settings controlled by UI):
 | `[Capture] CopyToClipboard` | Also copy screenshots to the clipboard after capture (1/0)|
 | `[Capture] CaptureMonsToOne` | One combined image for **Capture Screens** (1/0)|
 | `[Capture] Shutter` | Shutter effect after capturing screen(s) (1/0)|
-| `[Capture] PreferredMons` | 0 - **Capture Screens** will capture all monitors. You can chooice which monitors to capture with a numbers list (like 2,3,5) |
+| `[Capture] PreferredMons` | You can choose which captures of monitors will be open on your editor with Edit button. use a numbers list (like 2,3,5) or use 0 for all |
 | `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button |
 | `[Record] Timer` | Countdown before recording (0/3/5/10)|
 | `[Record] CaptureMethod` | (`auto`/`gdi`) Auto is the default and uses Desktop Duplication method |
 | `[Record] Osd` | Informations that centered on frame (1/0) |
-| `[Record] FPS Cursor Quality` | MP4 frame rate(10/15/30/60), Cursor(1/0) and Quality(1/0) |
-| `[Gif] FPS Colors Dither Loop` | GIF frame rate(10/20/30/50), colors(256), dithering(1/0) and looping(1/0) |
+| `[Record] FPS Cursor Quality` | MP4 frame rate(10/15/30/60), Cursor(1/0) and Quality(Hi=1/Lo=0) |
+| `[Gif] FPS Colors Dither Loop` | GIF frame rate(5/10/20/25/30/50), colors(2 to 256), dithering(1/0) and looping(1/0) |
 | `[Output] Dir` | Where captures are saved |
 | `[Editors] Image Video Gif` | Editor program paths used by the **Edit** button |
 
@@ -360,6 +358,7 @@ Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can chang
 to the default folder instead
 
 - **Environment variables** are supported on paths. So you don't have worry about user name while using documents, desktop or your custom folder that placed on user folder
+- .\ paths in [Output] Dir are relative to the exe’s folder
 
 Captures are named with proper timestamp;
 
@@ -375,7 +374,7 @@ Captures are named with proper timestamp;
 ## Privacy
 
 - **No network access:** never requests internet connection. no telemetry, no update check
-- **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to your captures folder that you choice
+- **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to your captures folder you choose
 
 ---
 
@@ -396,7 +395,7 @@ Click **More info → Run anyway** if the checksum matches
 
 ## System requirements
 
-- Windows 10 and higher (x64)
+- Windows 10 and 11
 - MP4 recording: Windows Media Foundation (included in Windows, except "N" editions without the Media Feature Pack)
 - Hardware video encoding: any GPU with a Windows H.264 encoder (NVIDIA, AMD, Intel); otherwise Windows' software encoder is used automatically
 - DPI aware: sharp on high-DPI and mixed-DPI setups
