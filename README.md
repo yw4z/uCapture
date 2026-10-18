@@ -332,27 +332,28 @@ uCapture.exe CaptureRect "100 200 800 600"
 
 ## Settings
 
-All settings live in `settings.ini` next to `uCapture.exe`. Open it with
-**Tray → More → Settings**. Close uCapture before editing it, because the app saves its
-settings when it exits.
+All settings lives in `settings.ini` next to `uCapture.exe`. You can quickly access it from **Tray → More → Settings**
 
-Highlights:
+- Close uCapture before editing it, because the app saves its settings when it exits
+
+Highlights (Non listed settings controlled by UI):
 
 | Setting | What it controls |
 |---|---|
-| `[Capture] ImageFormat` | `png` (default, lossless) or `jpg` |
-| `[Capture] CopyToClipboard` | Also copy screenshots to the clipboard |
-| `[Capture] CaptureMonsToOne` | One combined image for **Capture Screens** |
-| `[Capture] Shutter` | Flash after **Capture Screens** |
+| `[Capture] ImageFormat` | (`png`/`jpg`) Lossless png is the default|
+| `[Capture] JpgQuality` | Quality setting for jpg format with (50-100) range |
+| `[Capture] CopyToClipboard` | Also copy screenshots to the clipboard after capture (1/0)|
+| `[Capture] CaptureMonsToOne` | One combined image for **Capture Screens** (1/0)|
+| `[Capture] Shutter` | Shutter effect after capturing screen(s) (1/0)|
+| `[Capture] PreferredMons` | 0 - **Capture Screens** will capture all monitors. You can chooice which monitors to capture with a numbers list (like 2,3,5) |
 | `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button |
-| `[Record] Timer` | Countdown before recording |
-| `[Record] CaptureMethod` | `auto` (Desktop Duplication) or `gdi` |
-| `[Gif] Fps`, `Colors`, `Dither`, `Loop` | GIF frame rate, colours, dithering and looping |
+| `[Record] Timer` | Countdown before recording (0/3/5/10)|
+| `[Record] CaptureMethod` | (`auto`/`gdi`) Auto is the default and uses Desktop Duplication method |
+| `[Record] Osd` | Informations that centered on frame (1/0) |
+| `[Record] FPS Cursor Quality` | MP4 frame rate(10/15/30/60), Cursor(1/0) and Quality(1/0) |
+| `[Gif] FPS Colors Dither Loop` | GIF frame rate(10/20/30/50), colors(256), dithering(1/0) and looping(1/0) |
 | `[Output] Dir` | Where captures are saved |
-| `[Editors] Image` / `Video` / `Gif` | Programs used by the **Edit** button |
-
-Every setting is explained in **[settings.md](settings.md)**. Missing settings are added
-automatically with their defaults, so an old `settings.ini` always keeps working.
+| `[Editors] Image Video Gif` | Editor program paths used by the **Edit** button |
 
 ---
 
@@ -360,9 +361,11 @@ automatically with their defaults, so an old `settings.ini` always keeps working
 
 Captures are saved to `%USERPROFILE%\Desktop\Captures` by default; You can change it with
 `[Output] Dir`. If the folder can't be created (for example a disconnected drive), captures go
-to the default folder instead, so nothing is lost. Environment variables are supported for paths 
+to the default folder instead
 
-Files are named with proper timestamp:
+- **Environment variables** are supported for paths. So you don't have worry about user name on paths
+
+Captures are named with proper timestamp;
 
 | Capture | Example |
 |---|---|
@@ -377,8 +380,6 @@ Files are named with proper timestamp:
 
 - **No network access:** never requests internet connection. no telemetry, no update check
 - **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to your captures folder that you choice
-- **Hidden from captures:** uCapture's own windows (recording frame, notification, pickers) are excluded from screen capture, so they never show up in your screenshots or
-  recordings, nor in other screen-sharing apps (Windows 10 version 2004 or later)
 
 ---
 
