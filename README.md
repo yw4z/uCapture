@@ -35,7 +35,7 @@ never connects to the internet
 ## Contents
 
 - [Download and installation](#download-and-installation)
-- [Quick start](#quick-start)
+- [About project](#about-project)
 - [Tray menu](#tray-menu)
 - [Capturing](#capturing)
 - [Recording](#recording)
@@ -71,15 +71,29 @@ never connects to the internet
 
 ---
 
-## Quick start
+## About project
 
-Currently app only usable with tray menu or using cli commands that can be combined with hotkey tools<br>
-Built-in keyboard shortcuts in development plan
+Project started as a AutoHotkey based script. I have used it for a long time to shape experience in my workflow then decided share as an app with writing it on win32 for best performance. Code written by CoPilot and Claude under my guidance and heavy testing
+
+🎯 Goal of the project 
+- Making most compact, fast & modern looking capture tool
+
+📅 Development plan;
+- Welcome screen with dedicated buttons for each function
+- Built-in hotkeys support
+- Frame / selection snapping to windows
+- OCR capabilities with native and external deps support
+- QR code support
+- Pause capability for screen recording
+- Optional sounds for notifications and capturing
+- More settings to configure experience
+- Improved area detection for region pick
+- Improved Cli commands
 
 ---
 
 ## Tray menu
-Open the menu via left or right clicking the tray icon.
+Open the menu via left or right clicking the tray icon
 
 <img width="155" height="287" alt="20261016_230044_Screenshot" src="https://github.com/user-attachments/assets/2a5ddbf4-3e12-4857-8bf1-36a8772b19fe" />
 
