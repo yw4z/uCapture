@@ -238,8 +238,10 @@ By default, recordings use **Desktop Duplication**, the same API screen-sharing 
 
 A small popup appears at the bottom of the screen after each capture:
 
-- **Show** opens the captures folder with the new file selected
-- **Edit** opens the file in your editor
+| Button | What it does |
+|---|---|
+| **Show** | opens the captures folder with the new file selected |
+| **Edit** | opens the file in your editor |
 
 It closes by itself after a few seconds. It never steals focus from the window you are working in, and it never appears in your captures
 
