@@ -85,6 +85,7 @@ Project started as a AutoHotkey based script. I have used it for a long time to 
 - OCR capabilities with native and external deps support
 - QR code support
 - Pause capability for screen recording
+- Full screen mode for screen recording
 - Optional sounds for notifications and capturing
 - More settings to configure experience
 - Improved area detection for region pick
