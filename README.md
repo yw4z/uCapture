@@ -1,7 +1,7 @@
 <img src="https://github.com/user-attachments/assets/debac80a-df93-4c27-b62b-0b1a7af8567b" width="64">
 <h1>uCapture</h1>
 
-Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows 10 2004+ and 11
+Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows
 
 ---
 
