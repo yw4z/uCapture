@@ -337,7 +337,7 @@ Highlights (Non listed settings controlled by UI):
 
 | Setting | What it controls |
 |---|---|
-| `[General] NotifDuration` | Visibility time of notification before disppears automatically|
+| `[General] NotifDuration` | Visibility time of notification before disppears automatically (0 to 10sec)|
 | `[Capture] ImageFormat` | (`png`/`jpg`) Lossless png is the default|
 | `[Capture] JpgQuality` | Quality setting for jpg format with (50-100) range |
 | `[Capture] CopyToClipboard` | Also copy screenshots to the clipboard after capture (1/0)|
