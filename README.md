@@ -29,7 +29,7 @@ Just about 200kb! starts instantly, uses practically no CPU and RAM while idle
 **Command line:** can be scripted or bound to hotkey tools
 
 ## 🔒 Private
-never connects to the internet
+never connects to the internet, no history
 
 ---
 
@@ -379,6 +379,7 @@ Captures are named with proper timestamp;
 
 - **No network access:** never connects to the internet. No telemetry, no update check
 - **Local only:** settings are stored in `settings.ini` next to the exe, and captures are saved only to the captures folder you choose
+- **No history:** does not keeps history of what you capture
 
 ---
 
