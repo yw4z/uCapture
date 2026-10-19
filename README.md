@@ -1,7 +1,7 @@
 <img src="https://github.com/user-attachments/assets/debac80a-df93-4c27-b62b-0b1a7af8567b" width="64">
 <h1>uCapture</h1>
 
-Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows 10 and 11
+Lightweight, portable, modern looking, fast screenshot and screen-recording tool for Windows 10 2004+ and 11
 
 ---
 
@@ -399,7 +399,7 @@ Click **More info → Run anyway** if the checksum matches
 
 ## System requirements
 
-- Windows 10 and 11, 64-bit
+- Windows 10 2004+ and 11, 64-bit
 - MP4 recording: Windows Media Foundation (included in Windows, except "N" editions without the Media Feature Pack)
 - Hardware video encoding: any GPU with a Windows H.264 encoder (NVIDIA, AMD, Intel); otherwise Windows' software encoder is used automatically
 - DPI aware: sharp on high-DPI and mixed-DPI setups
