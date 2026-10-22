@@ -9,7 +9,7 @@ Lightweight, portable, modern looking, fast screenshot and screen-recording tool
 Just about 200kb! starts instantly, uses practically no CPU and RAM while idle
 
 ## 🌄 Multiple screen capture modes
-**Region capturing:** just draw a rectangle or capture last used again<br>
+**Region capturing:** hover a window or screen and click, or draw a rectangle. or just repeat the last one<br>
 **Screen and window capture:** capture whatever you want easily
 
 ## 🎥 Screen recording
@@ -62,6 +62,7 @@ never connects to the internet, no history
 
 - No installer. uCapture is portable and stores its settings in `settings.ini` next to the exe
 - Don't put it in a folder that needs admin rights, like `C:\Program Files`. uCapture can't save its settings there
+- Don't run it as administrator: command line calls from normal programs (hotkey tools, scripts) can't reach an elevated instance
 - Only one instance of uCapture can run at a time
 
 ### Uninstallation
@@ -84,13 +85,14 @@ The project started as an AutoHotkey script. I have used it for a long time to s
 - Welcome screen with dedicated buttons for each function
 - Built-in hotkeys support
 - Frame / selection snapping to windows
+- Capture with scroll
 - OCR capabilities with native and external deps support
 - QR code support
 - Pause capability for screen recording
 - Full screen mode for screen recording
 - Optional sounds for notifications and capturing
 - More settings to configure experience
-- Improved area detection for region pick
+- Improved area detection for region
 - Improved CLI commands
 
 ---
@@ -98,13 +100,12 @@ The project started as an AutoHotkey script. I have used it for a long time to s
 ## Tray menu
 Open the menu via left or right clicking the tray icon
 
-<img width="155" height="287" alt="20261016_230044_Screenshot" src="https://github.com/user-attachments/assets/2a5ddbf4-3e12-4857-8bf1-36a8772b19fe" />
+- The items are listed bottom-up by default to reduce mouse movements after you click tray icon, so Region sits right next to the cursor. You can list them top-down with `[General] MenuOrder=1` if you are using taskbar on top
 
 | Item | What it does |
 |---|---|
-| **Region draw** | Draw a rectangle on the screen to capture |
+| **Region** | | Hover over windows to highlight them, then click one to capture or draw a rectangle on the screen to capture |
 | **Region repeat** | Capture the last drawn region again, without drawing |
-| **Region pick** | Hover over windows to highlight them, then click one to capture. Hover the desktop to capture screen |
 | **Capture screens** | Capture every monitor as per monitor or combined image. See `CaptureMonsToOne` |
 | **Screens ▸** | Each monitor is listed with its number and resolution for a direct capture. **Only appears if multiple monitors exist** |
 | **Windows ▸** | A list of open windows. Choose one to capture it directly|
@@ -116,32 +117,30 @@ Open the menu via left or right clicking the tray icon
 
 ## Capturing
 
-### Region draw
+### Region
 
-Press and drag to draw the capture area<br>
+One mode for picking windows / screens or drawing rectangles. Move the mouse around: the window under the cursor gets a blue frame. Over the desktop, the whole monitor is highlighted instead
+
+**Hover & pick mode;**
+- Hold **Shift** to highlight the screen that contains the cursor
+- Hold **Alt** to see the size of the frame and the window's title, and bring it to front temporarily
+- **Right-click** or **Esc** to cancel capturing
+
+**Press and drag to draw the capture area;**
 - Hold **Shift** to draw a perfect square
+- Hold **Alt** to see the size of the frame
 - Hold **Ctrl** to keep the current aspect ratio
 - **Right-click** or **Esc** to cancel capturing
 
-When you release the left mouse button, the region will be captured and saved, copied to the clipboard (if enabled) and selected rectangle remembered for **Region repeat**
+When a region selected, the region will be captured and saved, copied to the clipboard (if enabled) and selected rectangle remembered for **Region repeat**
 
 ### Region repeat
 
 Captures exactly the same rectangle as the previous region draw, instantly. Useful for taking "before / after" shots of the same area. The region is remembered across restarts
 
-### Region pick
-
-Move the mouse around: the window or screen under the cursor gets a blue frame and a size label. Click
-to capture it. If the window is in the background, it will be moved to foreground first
-
-If you hover the desktop instead of a window, the whole monitor is highlighted and captured
-
-- Hold **Shift** to highlight the screen that contains the cursor
-- **Right-click** or **Esc** to cancel capturing
-
 ### Capture screens
 
-Captures all monitors at once. By default each monitor becomes its own file (`..._Screen_1.png`, `..._Screen_2.png`, …). With `[Capture] CaptureMonsToOne=1` setting you get one image of the whole desktop instead.
+Captures all monitors at once. By default you get one image of the whole desktop. With `[Capture] CaptureMonsToOne=0` each monitor becomes its own file instead `(..._Screen_1.png, ..._Screen_2.png, …)`
 
 A short shutter flash confirms the capture (can be turned off with `[Capture] Shutter=0`)
 
@@ -243,7 +242,9 @@ A small popup appears at the bottom of the screen after each capture:
 | **Show** | opens the captures folder with the new file selected |
 | **Edit** | opens the file in your editor |
 
-It closes by itself after a few seconds. It never steals focus from the window you are working in, and it never appears in your captures
+It closes by itself after a few seconds. It never steals focus from the window you are working in.
+
+By default it can show up in a capture taken while it is still on screen; set [General] CaptureUI=0 to keep uCapture's own windows out of every capture and recording
 
 ### Clipboard
 
@@ -282,11 +283,11 @@ uCapture.exe <command>
 
 | Command | What it does |
 |---|---|
-| `RegionDraw` | Draw a region to capture |
+| `RegionDraw` | Hover and click a window or screen, or drag to draw a region |
 | `RegionRepeat` | Capture the last region again |
-| `RegionPick` | Click a window (or the desktop for a monitor) to capture it |
 | `CaptureScreens <n / "1,2,3">` | blank argument captures all monitors<br> `n` captures targeted screen<br> Or use a list with comma for a selective capture `"1,3,5"` |
 | `CaptureRect "x y w h"` | Capture a rectangle in screen pixels |
+| `Record` | Show the recording frame, or bring it to the front |
 | `ColorPicker` | Open the color picker |
 | `OpenFolder` | Open the captures folder |
 
@@ -311,10 +312,12 @@ uCapture.exe CaptureRect "100 200 800 600"
 |---|---|---|
 | Region draw | Drag | Draw the region |
 | Region draw | Shift | Use aspect ratio as 1:1 (Square) |
+| Region draw | Alt | Show size and title on the frame |
 | Region draw | Ctrl | Keep aspect ratio |
 | Region draw | Right-click / Esc | Cancel |
 | Region pick | Click | Capture the highlighted window or monitor |
 | Region pick | Shift | Highlight screen that contains cursor and click to capture |
+| Region draw | Alt | Show size and title on the frame, and the window's live preview |
 | Region pick | Right-click / Esc | Cancel |
 | Recording frame | Drag bar | Drag to move frame |
 | Recording frame | Drag edge or corner | Resize (Ctrl = keep ratio, Shift = use aspect ratio as 1:1 (Square)) |
@@ -337,21 +340,36 @@ Highlights (Non listed settings controlled by UI):
 
 | Setting | What it controls |
 |---|---|
-| `[General] NotifDuration` | Visibility time of notification before disppears automatically (0 to 10sec)|
-| `[Capture] ImageFormat` | (`png`/`jpg`) Lossless png is the default|
-| `[Capture] JpgQuality` | Quality setting for jpg format with (50-100) range |
-| `[Capture] CopyToClipboard` | Also copy screenshots to the clipboard after capture (1/0)|
-| `[Capture] CaptureMonsToOne` | One combined image for **Capture screens** (1/0)|
-| `[Capture] Shutter` | Shutter effect after capturing screen(s) (1/0)|
-| `[Capture] PreferredMons` | Which monitors' images the **Edit** button opens after Capture screens: a list like `2,3,5`, or `0` for all |
-| `[Record] Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button. Lower values give higher quality. Works like x264's CRF and default values are Mp4QualityHi=18 Mp4QualityLo=32 |
-| `[Record] Timer` | Countdown before recording (0/3/5/10)|
-| `[Record] CaptureMethod` | (`auto`/`gdi`) Auto is the default and uses Desktop Duplication method |
-| `[Record] Osd` | Short hints in the middle of the frame when a bar option changes (1/0) |
-| `[Record] FPS Cursor Quality` | MP4 frame rate(10/15/30/60), Cursor(1/0) and Quality(Hi=1/Lo=0) |
-| `[Gif] FPS Colors Dither Loop` | GIF frame rate(5/10/20/25/30/50), colors(2 to 256), dithering(1/0) and looping(1/0) |
-| `[Output] Dir` | Where captures are saved |
-| `[Editors] Image Video Gif` | Editor program paths used by the **Edit** button |
+| `[General]` |---|
+| `NotifDuration` | Visibility time of notification before disppears automatically (0 to 10sec)|
+| `CaptureUI` | 1 (default) lets uCapture's own windows (notification, color picker, Region frames) show up in captures; 0 hides them from every capture and recording |
+| `MenuOrder` | Tray menu items bottom-up (0, default) or top-down (1)|
+| `MenuHighlight` | Blue preview frame while hovering Screens / Windows entries (1/0) |
+| `NotifDuration` | Visibility time of notification before disppears automatically (0 to 10sec)|
+| `[Capture]` | |
+| `ImageFormat` | (`png`/`jpg`) Lossless png is the default|
+| `JpgQuality` | Quality setting for jpg format with (50-100) range |
+| `CopyToClipboard` | Also copy screenshots to the clipboard after capture (1/0)|
+| `CaptureMonsToOne` | Capture screens as one combined image (1, default) or one file per monitor (0)|
+| `Shutter` | Shutter effect after capturing screen(s) (1/0)|
+| `PreferredMons` | Which monitors' images the **Edit** button opens after Capture screens: a list like `2,3,5`, or `0` for all |
+| `[Record]` | |
+| `Quality` | Used quality level for recording (Hi=1/Lo=0) |
+| `Mp4QualityHi` / `Mp4QualityLo` | MP4 quality levels for the H/L button. Lower values give higher quality. Works like x264's CRF and default values are Mp4QualityHi=18 Mp4QualityLo=32 |
+| `FPS` | MP4 frame rate(10/15/30/60) |
+| `Cursor` | Visibility of Cursor in capturing (1/0) |
+| `Timer` | Countdown before recording (0/3/5/10)|
+| `CaptureMethod` | (`auto`/`gdi`) Auto is the default and uses Desktop Duplication method |
+| `Osd` | Short hints in the middle of the frame when a bar option changes (1/0) |
+| `[Gif]` | |
+| `FPS` | frame rate(5/10/20/25/30/50)|
+| `Colors` | colors(2 to 256) |
+| `Dither` | dithering(0 off / 1 error diffusion / 2 ordered) |
+| `Loop` | looping(1/0) |
+| `[Output]` | |
+| `Dir` | Where captures are saved |
+| `[Editors]` | |
+| `Image Video Gif` | Editor program paths used by the **Edit** button |
 
 ---
 
